@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Time Clock</string>
+    <string name="action_settings">Settings</string>
+    <string name="TestString">This is a string</string>
+    <string name="open">Open...</string>
+    <string name="ctrl_o">Ctrl-O</string>
+    <string name="save">Save...</string>
+    <string name="save_as">Save As...</string>
+    <string name="ctrl_shift_s">Ctrl-Shift-S</string>
+    <string name="importword">Import...</string>
+    <string name="x" />
+    <string name="ctrl_s">Ctrl-S</string>
+    <string name="export">Export...</string>
+    <string name="ctrl_e">Ctrl-E</string>
+    <string name="quit">Quit</string>
+</resources>
