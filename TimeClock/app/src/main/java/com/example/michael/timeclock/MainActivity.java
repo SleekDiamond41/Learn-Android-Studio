@@ -1,14 +1,11 @@
 package com.example.michael.timeclock;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,6 +15,11 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
+    PunchHistories punchHistories;
+    FileInputStream fis;
+    FileOutputStream fos;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String filename = "PunchTime History.txt";
+
+        String filename = "PunchPair History.txt";
 
         try {
             fis = this.openFileInput(filename);
@@ -41,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         punchHistories = new PunchHistories(fis, fos);
 
 
+        setContentView(punchHistories.getPunchHistoryView(this));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+/*
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,19 +60,9 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.make(view, "You already punched in recently.", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
-
-
-                try {
-                    punchHistories.writePunchesToFile();
-                }
-                catch (IOException e) {
-                    Log.d("WRITE", "IO Exception in writing file");
-                }
-                catch (InterruptedException e) {
-                    Log.d("WRITE", "Interrupted exception in writing file.");
-                }
             }
         });
+*/
     }
 
     @Override
@@ -76,6 +71,34 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_time_sheet, menu);
         return true;
     }
+
+
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        try {
+            punchHistories.writePunchesToFile();
+        } catch (IOException e) {
+            Log.d("FILE", "IO Exception in writing file");
+        }
+    }
+
+
+    @Override
+    public void onStop() {
+        try {
+            punchHistories.writePunchesToFile();
+        } catch (IOException e) {
+            Log.d("FILE", "IO Exception in writing file");
+        }
+
+        super.onStop();
+    }
+
+
 
 
     @Override
@@ -93,7 +116,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    PunchHistories punchHistories;
-    FileInputStream fis;
-    FileOutputStream fos;
+
 }

@@ -13,4 +13,10 @@
     <string name="export">Export...</string>
     <string name="ctrl_e">Ctrl-E</string>
     <string name="quit">Quit</string>
+    <string name="sweet_vindication">Sweet vindication!</string>
+    <string name="message2">Everything is better now</string>
+    <string name="message3">Okay, this isn\'t quite what I was thinking</string>
+    <string name="message4">Now we\'re talking</string>
+    <string name="textcell_is_working">TextCell is working!</string>
+    <string name="good">Good!</string>
 </resources>

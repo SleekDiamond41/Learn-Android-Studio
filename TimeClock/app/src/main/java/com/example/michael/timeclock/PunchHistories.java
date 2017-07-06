@@ -1,7 +1,9 @@
 package com.example.michael.timeclock;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -27,17 +29,17 @@ class PunchHistories {
         DataInputStream dis = new DataInputStream(fis);
         dos = new DataOutputStream(fos);
 
-        punchTimes = new ArrayList<>();
+        punchPairsList = new ArrayList<>();
 
-        //read all punchTimes from file
+        //read all punchPairsList from file
         try {
             while (dis.available() > 0) {
-                //initialize a new PunchTime, if there is one in the file
-                punchTimes.add(new PunchTime(dis));
+                //initialize a new PunchPair, if there is one in the file
+                punchPairsList.add(new PunchPair(dis));
 
                 //if nothing was read from the file, break out and move on
-                if(!punchTimes.get(punchTimes.size() - 1).getIsSet()) {
-                    punchTimes.remove(punchTimes.size() - 1);
+                if(!punchPairsList.get(punchPairsList.size() - 1).getIsSet()) {
+                    punchPairsList.remove(punchPairsList.size() - 1);
                     break;
                 }
             }
@@ -45,30 +47,28 @@ class PunchHistories {
         catch (IOException e) {
             Log.d("FILE", "ERROR: PunchHistories(FileInputStream, FileOutputStream)");
         }
-        punchesAlreadyInFile = getPunchesCount();
+        numberOfPunchesInFile = getPunchPairCount();
     }
 
 
-    //method to add new PunchTime
-    boolean newTimePunch() {
-        punchTimes.add(new PunchTime());
+    //method to add new PunchPair
+    boolean newPunch(boolean isPunchIn) {
+        punchPairsList.add(new PunchPair(isPunchIn));
 
         //don't bother checking how long it has been since the last check in
-        if(punchTimes.size() > 1) {
+        if(punchPairsList.size() > 1) {
             Integer newestItem;
-            Integer previousItem;
 
             //get the indices of the newest and previous punches
-            newestItem = punchTimes.size() - 1;
-            previousItem = punchTimes.size() - 2;
+            newestItem = punchPairsList.size() - 1;
 
             Integer requiredDelayBetweenPunches = 60000;
-            if ((punchTimes.get(newestItem).getCalTimeInMillis()
-                    - punchTimes.get(previousItem).getCalTimeInMillis())
+            if ((punchPairsList.get(newestItem).getPunchInTimeInMillis()
+                    - punchPairsList.get(newestItem).getPunchOutTimeInMillis())
                     < requiredDelayBetweenPunches) {
 
                 //if enough time has NOT passed, reject new punch
-                punchTimes.remove((int) newestItem);
+                punchPairsList.remove((int) newestItem);
                 return false;
             }
         }
@@ -82,74 +82,80 @@ class PunchHistories {
     }
 
 
-    void writePunchesToFile() throws IOException, InterruptedException {
+    void writePunchesToFile() throws IOException {
 
-        for (int i = punchesAlreadyInFile; i < punchTimes.size(); ++i) {
-            punchTimes.get(i).writePunchToFile(dos);
+        while(numberOfPunchesInFile < punchPairsList.size())
+        {
+            punchPairsList.get(numberOfPunchesInFile).writePunchToFile(dos);
+            ++numberOfPunchesInFile;
         }
-
         dos.flush();
     }
 
-    ViewGroup getPunchHistoryViewGroup(ViewGroup tableLayout, ViewGroup tableRow, TextView textCell) {
-
-        //add new cell to table row
-
-//        textCell.setText("TEST");
-        tableRow.addView(textCell);
-
-//        textCell.setText("IS WORKING");
-        tableRow.addView(textCell);
-
-        tableLayout.addView(tableRow);
-
-        //if there is an odd number of items, set a new cell in the row
-        //with a blank string as its text
-
-
-
-        //Add new row to table layout
-
-        //Add table layout to viewGroup
-
-
-        /*for (int i = 0; i < 2; ++i) {
-
-
-            cell = findViewById(R.id.textViewCellRight);
-
-            ll.addView(viewGroup);
-
-
-            ll.addView(findViewById(R.id.TableRowShowPunchTimes));
-
-
-            //TableRow tr = new TableRow();
-
-
-            ll.addView(tr);
-
-            ll.
-
-                    tr.addView(findViewById(R.id.col1));
-
-            tr.addView(findViewById(R.id.col2));
-
-            ll.addView(tr);
-        }*/
-        return tableLayout;
+    private String getFormattedDate(int x) {
+        return punchPairsList.get(x).getDateFormatted();
     }
 
-    public String printFormattedPunchTime(int x) {
-        return punchTimes.get(x).formatPunchTime();
+    private String getFormattedTime(int x) {
+        return punchPairsList.get(x).getTimeFormatted();
+    }
+
+    View getPunchHistoryView(Context context) {
+
+        SimpleLayoutInflater inflater = new SimpleLayoutInflater(context);
+
+        ViewGroup fullTableLayout = (ViewGroup) inflater.inflate(R.layout.table_layout_full_layout);
+        ViewGroup tableRowLayout;
+        TextView tv;
+
+        for (Integer i = 0; i < getPunchPairCount(); ++i) {
+
+            //fill a row with cells
+            tableRowLayout = (ViewGroup) inflater.inflate(R.layout.practice_layout_tablerow);
+
+            //assign date for newest PUNCHPAIR
+            punchPairsList.get(i).getDateFormatted();
+
+            //check for punch in
+
+            //if there is a punch in, assign date to tableRowlayout child (0)
+            //and assign time to tableRowLayout child (1)
+
+            //check for punch out
+
+            //if there is a punch out, assign time to tableRowLayout child (2)
+
+
+
+
+
+            if (getFormattedDate(i).equals(getFormattedDate(i + 1))) {
+                tv = (TextView) tableRowLayout.getChildAt(0);
+                tv.setText(getFormattedDate(i));
+
+                tv = (TextView) tableRowLayout.getChildAt(1);
+                tv.setText(getFormattedTime(i));
+            }
+
+            ++i;
+            tv = (TextView) tableRowLayout.getChildAt(2);
+            if (!i.equals(getPunchPairCount())) {
+                tv.setText(getFormattedTime(i));
+            } else {
+                tv.setText("");
+            }
+            fullTableLayout.addView(tableRowLayout);
+        }
+
+        return fullTableLayout;
     }
 
     @NonNull
-    private Integer getPunchesCount () {
-        return punchTimes.size();
+    private Integer getPunchPairCount() {
+        return punchPairsList.size();
     }
 
-    private Integer punchesAlreadyInFile;
-    private List<PunchTime> punchTimes;
+    private Integer numberOfPunchesInFile;
+    private List<PunchPair> punchPairsList;
     private DataOutputStream dos;
 }
