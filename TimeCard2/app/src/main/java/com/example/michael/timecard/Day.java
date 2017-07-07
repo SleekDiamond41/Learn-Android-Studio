@@ -13,6 +13,10 @@ import java.util.Calendar;
 import java.util.Locale;
 
 /**
+ * Day is an object which contains an array of two Calendar objects and a ViewGroup
+ * object. Its purpose is to track a pair of time punches, one in and one out, each
+ * stored in one of the two Calendar objects. The Calendar objects are always null
+ * unless instantiated.
  * Created by Michael on 7/6/17.
  */
 
