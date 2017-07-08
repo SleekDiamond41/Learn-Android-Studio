@@ -1,15 +1,18 @@
 package com.example.michael.timecard;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
+	private TimeCard timeCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
         //addContentView(mainActivityView, mainActivityView.getLayoutParams());
 
+        try {
+            timeCard = new TimeCard(this,
+		            (ViewGroup) findViewById(R.id.scrollableTable),
+                    (Button) findViewById(R.id.buttonPunchIn),
+                    (Button) findViewById(R.id.buttonPunchOut));
+        } catch (RuntimeException e) {
+            Log.d("TimeCard", "Error initializing TimeCard. Terminate program");
+        }
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+*/
     }
 
     @Override
@@ -44,6 +56,17 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    @Override
+    public void onStop() {
+	    try {
+		    timeCard.saveData(super.getApplicationContext());
+	    } catch (IOException e) {
+		    Log.d("MainActivity", "Data was not saved... or the stream wasn't closed properly?");
+	    }
+	    super.onStop();
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
