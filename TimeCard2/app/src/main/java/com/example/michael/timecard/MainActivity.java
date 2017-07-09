@@ -36,18 +36,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (RuntimeException e) {
             Log.d("TimeCard", "Error initializing TimeCard. Terminate program");
         }
-
-
-
-/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
     }
 
     @Override
@@ -66,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
 	    }
 	    super.onStop();
     }
+
+
+    @Override
+    public void onResume() {
+
+//	    add some kind of intelligence here to tell the computer to rebuild
+//	    the scrollableTableView, so that it will still exist when a user comes
+//	    back to the app
+
+	    super.onResume();
+    }
+
 
 
     @Override

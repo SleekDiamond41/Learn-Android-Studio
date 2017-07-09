@@ -58,7 +58,6 @@ class Day {
 		tableRowView = (ViewGroup) layoutInflater.inflate(R.layout.table_row, null);
 
 		Long tempLong;
-
 		for (int i = 0; i <= MAX_INDEX; ++i) {
 			try {
 				tempLong = dis.readLong();
@@ -70,24 +69,7 @@ class Day {
 				Log.d("DAY", "ERROR reading from file");
 			}
 		}
-	}
-
-
-	Day(LayoutInflater layoutInflater) {
-		punches = new Calendar[2];
-		tableRowView = (ViewGroup) layoutInflater.inflate(R.layout.table_row, null);
-
-		String[] temp = {"Date", "Punch In", "Punch Out"};
-		TextView textView;
-
-		for (int i = 0; i <= 2; ++i) {
-			try {
-				textView = (TextView) tableRowView.getChildAt(i);
-				textView.setText(temp[i]);
-			} catch (Exception e) {
-				Log.d("DAY", "ERROR updating tableRowView");
-			}
-		}
+		updateRowView();
 	}
 
 

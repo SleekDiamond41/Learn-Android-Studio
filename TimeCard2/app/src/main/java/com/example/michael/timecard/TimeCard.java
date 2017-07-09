@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
@@ -29,22 +31,19 @@ class TimeCard {
 			days = new ArrayList<>(0);
 			layoutInflater = LayoutInflater.from(context);
 			scrollingTableView = parentScrollView;
-			days.add(new Day(layoutInflater));
-			scrollingTableView.addView(days.get(0).getTableRowView());
-			indexLastWrittenDay = 0;
 		} catch (Exception e) {
 			throw new RuntimeException();
 		}
 
 		//initialize data input stream
 		try {
-			inputStream = new DataInputStream(context.openFileInput(filename));
-			readValuesFromFile((DataInputStream) inputStream);
+			inputStream = new DataInputStream(new BufferedInputStream(
+					context.openFileInput(filename)));
+			readValuesFromFile();
 		} catch (FileNotFoundException e) {
 			Log.d("TimeCard", "No data read from input file");
 		} finally {
 			try {
-				indexLastWrittenDay = days.size()-1;
 				indexOfMostRecentDay = days.size()-1;
 				if(inputStream != null)
 					inputStream.close();
@@ -56,60 +55,63 @@ class TimeCard {
 			}
 		}
 
+		setButton(buttonIn, Day.IN);
+		setButton(buttonOut, Day.OUT);
+	}
 
 
-		buttonIn.setText(R.string.in);
-		buttonIn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				try {
-					addDay(Calendar.getInstance(), Day.IN);
-					//days.add(new Day(Calendar.getInstance(), layoutInflater, Day.IN));
-					Snackbar.make(view, "Punch accepted!", Snackbar.LENGTH_LONG)
-							.setAction("Action", null).show();
-					//scrollingTableView.addView(days.get(days.size()-1).getTableRowView());
-				} catch (Exception e) {
-					Snackbar.make(view, "Punch could not be accepted now...", Snackbar.LENGTH_LONG)
-							.setAction("Action", null).show();
-					Log.d("TimeCard", "Error assigning PUNCH IN button");
+	private void setButton(Button button, int IN_OUT) {
+		if(IN_OUT == Day.IN) {
+			button.setText(R.string.in);
+			button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					try {
+						addDay(Calendar.getInstance(), Day.IN);
+						Snackbar.make(view, "Punch accepted!", Snackbar.LENGTH_LONG)
+								.setAction("Action", null).show();
+					} catch (Exception e) {
+						Snackbar.make(view, "Punch could not be accepted now...", Snackbar.LENGTH_LONG)
+								.setAction("Action", null).show();
+						Log.d("TimeCard", "Error assigning PUNCH IN button");
+					}
 				}
-			}
-		});
+			});
+		}
 
-
-		buttonOut.setText(R.string.out);
-		buttonOut.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				try {
-					Calendar currentCal = Calendar.getInstance();
-					if (days.size() <= 1) {
-						addDay(currentCal, 1);
-					} else {
-						indexOfMostRecentDay = days.size() - 1;
-						Day mostRecentDay = days.get(indexOfMostRecentDay);
-						try {
-							//try to add to same day
-							if (mostRecentDay.isSameDay(currentCal, Day.IN)) {
-								//days.get(indexOfMostRecentDay).addPunch(currentCal, Day.OUT);
-								mostRecentDay.addPunch(currentCal, Day.OUT);
-							} else {
+		else {
+			button.setText(R.string.out);
+			button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					try {
+						Calendar currentCal = Calendar.getInstance();
+						if (days.size() <= 0) {
+							addDay(currentCal, Day.OUT);
+						} else {
+							indexOfMostRecentDay = days.size() - 1;
+							Day mostRecentDay = days.get(indexOfMostRecentDay);
+							try {
+								//try to add to same day
+								if (mostRecentDay.isSameDay(currentCal, Day.IN)) {
+									mostRecentDay.addPunch(currentCal, Day.OUT);
+								} else {
+									addDay(currentCal, Day.OUT);
+								}
+							} catch (NullPointerException | IllegalArgumentException e) {
 								addDay(currentCal, Day.OUT);
 							}
-						} catch (NullPointerException | IllegalArgumentException e) {
-							addDay(currentCal, Day.OUT);
 						}
+						Snackbar.make(view, "Punch accepted!", Snackbar.LENGTH_LONG)
+								.setAction("Action", null).show();
+					} catch (Exception e) {
+						Snackbar.make(view, "Punch could not be accepted now...", Snackbar.LENGTH_LONG)
+								.setAction("Action", null).show();
+						Log.d("TimeCard", "Error assigning PUNCH OUT button");
 					}
-					Snackbar.make(view, "Punch accepted!", Snackbar.LENGTH_LONG)
-							.setAction("Action", null).show();
-					Log.d("TimeCard", "Error assigning PUNCH IN button");
-				} catch (Exception e) {
-					Snackbar.make(view, "Punch could not be accepted now...", Snackbar.LENGTH_LONG)
-							.setAction("Action", null).show();
-					Log.d("TimeCard", "Error assigning PUNCH IN button");
 				}
-			}
-		});
+			});
+		}
 	}
 
 
@@ -144,25 +146,32 @@ class TimeCard {
 		5 minutes since the most recent punch, don't accept a new punch.
 				- This should still be circumventable by adding a punch time manually, rather
 				than using one of the "Punch" buttons.
+
+				- If a new Calendar occurs before the most recent punch,
+				set needToAppendOnly to false.
 		 */
 	}
-
 
 
 	/**
 	 * A callable means of reading values from a given DataInputStream.
 	 * This has been moved from other areas to improve readability.
-	 * @param dataInputStream The stream from which values are to be read.
 	 */
-	private void readValuesFromFile(DataInputStream dataInputStream) {
+	private void readValuesFromFile() {
 		try {
-			while (dataInputStream.available() > 0) {
+			indexLastWrittenDay = 0;
+			while (inputStream.available() > 0) {
 				days.add(new Day((DataInputStream) inputStream, layoutInflater));
+				scrollingTableView.addView(days.get
+						(indexLastWrittenDay).getTableRowView(), 1);
 				++indexLastWrittenDay;
 			}
 		} catch (IOException e) {
 			Log.d("TimeCard", "Exception thrown reading from file");
+		} finally  {
+			indexLastWrittenDay = days.size() - 1;
 		}
+
 	}
 
 
@@ -214,8 +223,10 @@ class TimeCard {
 
 		//try to prepare output stream, APPEND or PRIVATE mode, based on needToAppendOnly
 		try {
-			outputStream = context.openFileOutput(filename,
-					((needToAppendOnly) ? Context.MODE_APPEND : Context.MODE_PRIVATE));
+			outputStream = new DataOutputStream(new BufferedOutputStream(
+					context.openFileOutput(filename, Context.MODE_APPEND)));
+					//context.openFileOutput(filename,
+					//((needToAppendOnly) ? Context.MODE_APPEND : Context.MODE_PRIVATE));
 
 			//Assuming we got here, start writing to the stream, from the beginning, if
 			//necessary, or just append if possible
@@ -226,14 +237,17 @@ class TimeCard {
 		} catch (IOException e) {
 			Log.d("TimeCard", "Data could not be written to file");
 		} finally {
-			outputStream.close();
+			if(outputStream != null) {
+				outputStream.flush();
+				outputStream.close();
+			}
 		}
 	}
 
 	private ArrayList<Day> days;
 	private ViewGroup scrollingTableView;
 	private LayoutInflater layoutInflater;
-	private final String filename = "Time Punch History1";
+	private final String filename = "Time Punch History";
 	private InputStream inputStream;
 	private OutputStream outputStream;
 	private boolean needToAppendOnly = true;
