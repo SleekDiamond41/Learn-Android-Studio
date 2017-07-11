@@ -19,7 +19,7 @@ class SimpleLayoutInflater {
     View inflate(int resource) {
         return inflater.inflate(resource, null);
     }
-    public LayoutInflater getLayoutInflater() {
+    LayoutInflater getLayoutInflater() {
         return inflater;
     }
 }
