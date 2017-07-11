@@ -22,12 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        //instantiate new TimeCard
-
-        //View timeCardView =
-
-        //addContentView(mainActivityView, mainActivityView.getLayoutParams());
-
         try {
             timeCard = new TimeCard(this,
 		            (ViewGroup) findViewById(R.id.scrollableTable),
@@ -44,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     @Override
     public void onStop() {
@@ -65,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
 	    super.onResume();
     }
-
 
 
     @Override

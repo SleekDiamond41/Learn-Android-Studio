@@ -62,7 +62,7 @@ class Day {
 			try {
 				tempLong = dis.readLong();
 				if (tempLong != 0) {
-					punches[i] = Calendar.getInstance();
+					punches[i] = Calendar.getInstance(Locale.US);
 					punches[i].setTimeInMillis(tempLong);
 				}
 			} catch (IOException e) {
@@ -79,17 +79,16 @@ class Day {
 	 * @param dos The DataInputStream to which the data is written
 	 */
 	void writeDayToFile(DataOutputStream dos) {
-		for(int i = 0; i <= MAX_INDEX; ++i) {
+
+		for(int i = 0; i < 2; ++i) {
 			try {
-				dos.writeLong(punches[i].getTimeInMillis());
-			} catch (NullPointerException e) {
-				try {
+				if (punches[i] != null) {
+					dos.writeLong(punches[i].getTimeInMillis());
+				} else {
 					dos.writeLong(0L);
-				} catch (IOException IOE) {
-					Log.d("DAY", "Nothing could be written to file");
 				}
 			} catch (IOException e) {
-				Log.d("DAY", "ERROR writing Day values to file");
+				Log.d("DAY", "Punch could not be written to file");
 			}
 		}
 	}

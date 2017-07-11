@@ -9,6 +9,11 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="TimeCard" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java" line="128" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java" line="185" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java" line="157" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="da534446-04e1-478f-9892-52a770eb9051" name="Default" comment="" />
     <ignored path="app.iws" />
@@ -38,135 +43,98 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="app" />
+    <favorites_list name="Temp">
+      <favorite_root url="com.example.michael.timecard.MainActivity" module="app" type="class" klass="com.intellij.ide.favoritesTreeView.smartPointerPsiNodes.ClassSmartPointerNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContextWrapper.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/ContextWrapper.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="371" column="5" selection-start-line="371" selection-start-column="5" selection-end-line="371" selection-end-column="5" />
-              <folding>
-                <element signature="e#11077#11078#0" expanded="true" />
-                <element signature="e#11128#11129#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/content_main.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout-v21/content_main.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeCard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#TimeCard#0" expanded="false" />
-                <element signature="method#setButton#0;class#TimeCard#0" expanded="false" />
-                <element signature="docComment;method#addDay#0;class#TimeCard#0" expanded="false" />
-                <element signature="docComment;method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
-                <element signature="docComment;method#sameDay#0;class#TimeCard#0" expanded="false" />
-                <element signature="method#sameDay#0;class#TimeCard#0" expanded="false" />
-                <element signature="docComment;method#saveData#0;class#TimeCard#0" expanded="false" />
-                <element signature="method#saveData#0;class#TimeCard#0" expanded="false" />
-                <element signature="e#7310#7344#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Day.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/Day.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
-              <folding>
-                <element signature="docComment;class#Day#0" expanded="false" />
-                <element signature="docComment;method#Day#0;class#Day#0" expanded="false" />
-                <element signature="docComment;method#Day#1;class#Day#0" expanded="false" />
-                <element signature="docComment;method#writeDayToFile#0;class#Day#0" expanded="false" />
-                <element signature="method#writeDayToFile#0;class#Day#0" expanded="false" />
-                <element signature="docComment;method#addPunch#0;class#Day#0" expanded="false" />
-                <element signature="e#4363#4391#0" expanded="false" />
-                <element signature="docComment;method#getTableRowView#0;class#Day#0" expanded="false" />
-                <element signature="docComment;method#updateRowView#0;class#Day#0" expanded="false" />
-                <element signature="method#updateRowView#0;class#Day#0" expanded="false" />
-                <element signature="docComment;method#isAfter#0;class#Day#0" expanded="false" />
-                <element signature="method#isAfter#0;class#Day#0" expanded="false" />
-                <element signature="docComment;method#isSameDay#0;class#Day#0" expanded="false" />
-                <element signature="method#isSameDay#0;class#Day#0" expanded="false" />
-                <element signature="docComment;method#getStringField#0;class#Day#0" expanded="false" />
-                <element signature="method#getStringField#0;class#Day#0" expanded="false" />
-                <element signature="docComment;method#fieldIsIn_OUT#0;class#Day#0" expanded="false" />
-                <element signature="method#fieldIsIn_OUT#0;class#Day#0" expanded="false" />
-                <element signature="method#get#0;class#Day#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table_row.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/table_row.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/MainActivity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="300">
+                  <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Activity.class" pinned="false" current-in-tab="false">
+            <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/app/Activity.class">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="443">
+                  <caret line="1115" column="0" selection-start-line="1115" selection-start-column="0" selection-end-line="1115" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Day.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/Day.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="287">
+                  <caret line="256" column="5" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
+                  <folding>
+                    <element signature="docComment;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#Day#0;class#Day#0" expanded="false" />
+                    <element signature="method#Day#0;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#Day#1;class#Day#0" expanded="false" />
+                    <element signature="method#Day#1;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#writeDayToFile#0;class#Day#0" expanded="false" />
+                    <element signature="method#writeDayToFile#0;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#addPunch#0;class#Day#0" expanded="false" />
+                    <element signature="method#addPunch#0;class#Day#0" expanded="false" />
+                    <element signature="e#4275#4303#0" expanded="false" />
+                    <element signature="docComment;method#getTableRowView#0;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#updateRowView#0;class#Day#0" expanded="false" />
+                    <element signature="method#updateRowView#0;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#isAfter#0;class#Day#0" expanded="false" />
+                    <element signature="method#isAfter#0;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#isSameDay#0;class#Day#0" expanded="false" />
+                    <element signature="method#isSameDay#0;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#getStringField#0;class#Day#0" expanded="false" />
+                    <element signature="method#getStringField#0;class#Day#0" expanded="false" />
+                    <element signature="docComment;method#fieldIsIn_OUT#0;class#Day#0" expanded="false" />
+                    <element signature="method#fieldIsIn_OUT#0;class#Day#0" expanded="false" />
+                    <element signature="method#get#0;class#Day#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="TimeCard.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="347">
+                  <caret line="296" column="56" selection-start-line="296" selection-start-column="56" selection-end-line="296" selection-end-column="56" />
+                  <folding>
+                    <element signature="docComment;class#TimeCard#0" expanded="false" />
+                    <element signature="method#TimeCard#0;class#TimeCard#0" expanded="false" />
+                    <element signature="method#setButton#0;class#TimeCard#0" expanded="false" />
+                    <element signature="e#2223#2239#0" expanded="false" />
+                    <element signature="method#enoughTimeHasPassedSinceLastPunch#0;class#TimeCard#0" expanded="false" />
+                    <element signature="docComment;method#addDay#0;class#TimeCard#0" expanded="false" />
+                    <element signature="method#addDay#0;class#TimeCard#0" expanded="false" />
+                    <element signature="method#assignIndexDaysNeedToBeWritten#0;class#TimeCard#0" expanded="false" />
+                    <element signature="docComment;method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+                    <element signature="method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+                    <element signature="docComment;method#sameDay#0;class#TimeCard#0" expanded="false" />
+                    <element signature="method#sameDay#0;class#TimeCard#0" expanded="false" />
+                    <element signature="docComment;method#saveData#0;class#TimeCard#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -2032,9 +2000,9 @@
         <option value="$PROJECT_DIR$/src/main/res/layout-v21/content_main.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/content_main.xml" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/michael/timecard/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/michael/timecard/Day.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/michael/timecard/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java" />
       </list>
     </option>
   </component>
@@ -2069,7 +2037,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -2087,6 +2054,64 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TimeCard2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TimeCard2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TimeCard2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2137,9 +2162,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="NBKnowledgePane" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2225,12 +2251,97 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -2262,6 +2373,34 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -2362,7 +2501,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-413" width="1920" height="1080" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2371,19 +2510,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19116081" sideWeight="0.49324325" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19116081" sideWeight="0.48608837" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48883376" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18849841" sideWeight="0.5067568" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19116081" sideWeight="0.5139116" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35192698" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2407,42 +2546,47 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/ContextWrapper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3690">
-          <caret line="374" column="0" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
-          <folding>
-            <element signature="e#11077#11078#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3645">
+          <caret line="371" column="5" selection-start-line="371" selection-start-column="5" selection-end-line="371" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/content_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout-v21/content_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout-v21/content_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
@@ -2459,14 +2603,78 @@
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#TimeCard#0" expanded="false" />
+            <element signature="method#TimeCard#0;class#TimeCard#0" expanded="false" />
             <element signature="method#setButton#0;class#TimeCard#0" expanded="false" />
+            <element signature="e#2223#2239#0" expanded="false" />
+            <element signature="method#enoughTimeHasPassedSinceLastPunch#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#assignIndexDaysNeedToBeWritten#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#sameDay#0;class#TimeCard#0" expanded="false" />
             <element signature="method#sameDay#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#saveData#0;class#TimeCard#0" expanded="false" />
-            <element signature="method#saveData#0;class#TimeCard#0" expanded="false" />
-            <element signature="e#7310#7344#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/ContextWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3690">
+          <caret line="374" column="0" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/content_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout-v21/content_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#TimeCard#0" expanded="false" />
+            <element signature="method#TimeCard#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#setButton#0;class#TimeCard#0" expanded="false" />
+            <element signature="e#2223#2239#0" expanded="false" />
+            <element signature="method#enoughTimeHasPassedSinceLastPunch#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#assignIndexDaysNeedToBeWritten#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#sameDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#sameDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#saveData#0;class#TimeCard#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2478,11 +2686,14 @@
           <folding>
             <element signature="docComment;class#Day#0" expanded="false" />
             <element signature="docComment;method#Day#0;class#Day#0" expanded="false" />
+            <element signature="method#Day#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#Day#1;class#Day#0" expanded="false" />
+            <element signature="method#Day#1;class#Day#0" expanded="false" />
             <element signature="docComment;method#writeDayToFile#0;class#Day#0" expanded="false" />
             <element signature="method#writeDayToFile#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#addPunch#0;class#Day#0" expanded="false" />
-            <element signature="e#4363#4391#0" expanded="false" />
+            <element signature="method#addPunch#0;class#Day#0" expanded="false" />
+            <element signature="e#4275#4303#0" expanded="false" />
             <element signature="docComment;method#getTableRowView#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#updateRowView#0;class#Day#0" expanded="false" />
             <element signature="method#updateRowView#0;class#Day#0" expanded="false" />
@@ -2500,24 +2711,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/table_row.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/ContextWrapper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#11077#11078#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2551,14 +2759,18 @@
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#TimeCard#0" expanded="false" />
+            <element signature="method#TimeCard#0;class#TimeCard#0" expanded="false" />
             <element signature="method#setButton#0;class#TimeCard#0" expanded="false" />
+            <element signature="e#2223#2239#0" expanded="false" />
+            <element signature="method#enoughTimeHasPassedSinceLastPunch#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#assignIndexDaysNeedToBeWritten#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#sameDay#0;class#TimeCard#0" expanded="false" />
             <element signature="method#sameDay#0;class#TimeCard#0" expanded="false" />
             <element signature="docComment;method#saveData#0;class#TimeCard#0" expanded="false" />
-            <element signature="method#saveData#0;class#TimeCard#0" expanded="false" />
-            <element signature="e#7310#7344#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2570,11 +2782,14 @@
           <folding>
             <element signature="docComment;class#Day#0" expanded="false" />
             <element signature="docComment;method#Day#0;class#Day#0" expanded="false" />
+            <element signature="method#Day#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#Day#1;class#Day#0" expanded="false" />
+            <element signature="method#Day#1;class#Day#0" expanded="false" />
             <element signature="docComment;method#writeDayToFile#0;class#Day#0" expanded="false" />
             <element signature="method#writeDayToFile#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#addPunch#0;class#Day#0" expanded="false" />
-            <element signature="e#4363#4391#0" expanded="false" />
+            <element signature="method#addPunch#0;class#Day#0" expanded="false" />
+            <element signature="e#4275#4303#0" expanded="false" />
             <element signature="docComment;method#getTableRowView#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#updateRowView#0;class#Day#0" expanded="false" />
             <element signature="method#updateRowView#0;class#Day#0" expanded="false" />
@@ -2620,13 +2835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="348" column="35" selection-start-line="348" selection-start-column="35" selection-end-line="348" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/java/io/FileNotFoundException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -2634,37 +2842,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/table_row.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/content_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout-v21/content_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout-v21/content_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/ContextWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3645">
+          <caret line="371" column="5" selection-start-line="371" selection-start-column="5" selection-end-line="371" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/table_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
@@ -2678,55 +2894,32 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java">
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/view/View.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="194">
+          <caret line="2882" column="13" selection-start-line="2882" selection-start-column="13" selection-end-line="2882" selection-end-column="13" />
           <folding>
-            <element signature="docComment;class#TimeCard#0" expanded="false" />
-            <element signature="method#setButton#0;class#TimeCard#0" expanded="false" />
-            <element signature="docComment;method#addDay#0;class#TimeCard#0" expanded="false" />
-            <element signature="docComment;method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
-            <element signature="docComment;method#sameDay#0;class#TimeCard#0" expanded="false" />
-            <element signature="method#sameDay#0;class#TimeCard#0" expanded="false" />
-            <element signature="docComment;method#saveData#0;class#TimeCard#0" expanded="false" />
-            <element signature="method#saveData#0;class#TimeCard#0" expanded="false" />
-            <element signature="e#7310#7344#0" expanded="false" />
+            <element signature="e#16254#16255#0" expanded="true" />
+            <element signature="e#16305#16306#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/ContextWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="371" column="5" selection-start-line="371" selection-start-column="5" selection-end-line="371" selection-end-column="5" />
-          <folding>
-            <element signature="e#11077#11078#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/Day.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state relative-caret-position="287">
+          <caret line="256" column="5" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
           <folding>
             <element signature="docComment;class#Day#0" expanded="false" />
             <element signature="docComment;method#Day#0;class#Day#0" expanded="false" />
+            <element signature="method#Day#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#Day#1;class#Day#0" expanded="false" />
+            <element signature="method#Day#1;class#Day#0" expanded="false" />
             <element signature="docComment;method#writeDayToFile#0;class#Day#0" expanded="false" />
             <element signature="method#writeDayToFile#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#addPunch#0;class#Day#0" expanded="false" />
-            <element signature="e#4363#4391#0" expanded="false" />
+            <element signature="method#addPunch#0;class#Day#0" expanded="false" />
+            <element signature="e#4275#4303#0" expanded="false" />
             <element signature="docComment;method#getTableRowView#0;class#Day#0" expanded="false" />
             <element signature="docComment;method#updateRowView#0;class#Day#0" expanded="false" />
             <element signature="method#updateRowView#0;class#Day#0" expanded="false" />
@@ -2740,6 +2933,44 @@
             <element signature="method#fieldIsIn_OUT#0;class#Day#0" expanded="false" />
             <element signature="method#get#0;class#Day#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="1115" column="0" selection-start-line="1115" selection-start-column="0" selection-end-line="1115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/TimeCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="296" column="56" selection-start-line="296" selection-start-column="56" selection-end-line="296" selection-end-column="56" />
+          <folding>
+            <element signature="docComment;class#TimeCard#0" expanded="false" />
+            <element signature="method#TimeCard#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#setButton#0;class#TimeCard#0" expanded="false" />
+            <element signature="e#2223#2239#0" expanded="false" />
+            <element signature="method#enoughTimeHasPassedSinceLastPunch#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#addDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#assignIndexDaysNeedToBeWritten#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#readValuesFromFile#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#sameDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="method#sameDay#0;class#TimeCard#0" expanded="false" />
+            <element signature="docComment;method#saveData#0;class#TimeCard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/michael/timecard/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

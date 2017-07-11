@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by Michael on 7/6/17.
@@ -29,6 +30,8 @@ class TimeCard {
 		try {
 			//initialize variables
 			days = new ArrayList<>(0);
+			indexDaysNeedToBeWritten = new ArrayList<>(0);
+
 			layoutInflater = LayoutInflater.from(context);
 			scrollingTableView = parentScrollView;
 		} catch (Exception e) {
@@ -67,9 +70,16 @@ class TimeCard {
 				@Override
 				public void onClick(View view) {
 					try {
-						addDay(Calendar.getInstance(), Day.IN);
-						Snackbar.make(view, "Punch accepted!", Snackbar.LENGTH_LONG)
-								.setAction("Action", null).show();
+						Calendar c = Calendar.getInstance(Locale.US);
+
+//						if(enoughTimeHasPassedSinceLastPunch(c)) {
+							addDay(c, Day.IN);
+							Snackbar.make(view, "Punch accepted!", Snackbar.LENGTH_LONG)
+									.setAction("Action", null).show();
+//						} else {
+//							Snackbar.make(view, "Punch not accepted: you punched in recently!",
+//									Snackbar.LENGTH_LONG).setAction("Action", null).show();
+//						}
 					} catch (Exception e) {
 						Snackbar.make(view, "Punch could not be accepted now...", Snackbar.LENGTH_LONG)
 								.setAction("Action", null).show();
@@ -85,7 +95,7 @@ class TimeCard {
 				@Override
 				public void onClick(View view) {
 					try {
-						Calendar currentCal = Calendar.getInstance();
+						Calendar currentCal = Calendar.getInstance(Locale.US);
 						if (days.size() <= 0) {
 							addDay(currentCal, Day.OUT);
 						} else {
@@ -115,6 +125,17 @@ class TimeCard {
 	}
 
 
+	private boolean enoughTimeHasPassedSinceLastPunch(Calendar c) {
+		if(days.get(days.size()-1).get(Day.OUT) == null) {
+			return((c.getTimeInMillis() - days.get(days.size() - 1)
+					.get(Day.IN).getTimeInMillis()) > MIN_PUNCH_WAIT);
+		} else {
+			return((c.getTimeInMillis() - days.get(days.size() - 1)
+					.get(Day.OUT).getTimeInMillis()) > MIN_PUNCH_WAIT);
+		}
+	}
+
+
 	/**
 	 * This is a unified method to add a new Day object to ArrayList days. This method
 	 * ensures that certain standards are met each time an item is added, i.e.
@@ -131,8 +152,11 @@ class TimeCard {
 		try {
 			days.add(new Day(c, layoutInflater, IN_OUT));
 			indexOfMostRecentDay = days.size()-1;
-			scrollingTableView.addView(
-					days.get(indexOfMostRecentDay).getTableRowView(), 1);
+			scrollingTableView.addView(days.get(
+					indexOfMostRecentDay).getTableRowView(), 1);
+
+			assignIndexDaysNeedToBeWritten(days.size()-1);
+
 		} catch (ArrayIndexOutOfBoundsException e) {
 			Log.d("TimeCard", "Array index out of bounds. Make sure any methods calling" +
 					" TimeCard.addDay(Calendar, LayoutInflater, int are sending" +
@@ -150,6 +174,19 @@ class TimeCard {
 				- If a new Calendar occurs before the most recent punch,
 				set needToAppendOnly to false.
 		 */
+	}
+
+
+	private int getIndexMostRecentDay() {
+		return days.size()-1;
+	}
+
+	private void assignIndexDaysNeedToBeWritten(int x) {
+		if(x < indexLastWrittenDay) {
+			needToAppendOnly = false;
+		} else {
+			indexDaysNeedToBeWritten.add(x);
+		}
 	}
 
 
@@ -171,7 +208,6 @@ class TimeCard {
 		} finally  {
 			indexLastWrittenDay = days.size() - 1;
 		}
-
 	}
 
 
@@ -220,24 +256,30 @@ class TimeCard {
 	 * may be lost if program is terminated.
 	 */
 	void saveData(Context context) throws IOException {
-
 		//try to prepare output stream, APPEND or PRIVATE mode, based on needToAppendOnly
 		try {
-			outputStream = new DataOutputStream(new BufferedOutputStream(
-					context.openFileOutput(filename, Context.MODE_APPEND)));
-					//context.openFileOutput(filename,
-					//((needToAppendOnly) ? Context.MODE_APPEND : Context.MODE_PRIVATE));
+			if(needToAppendOnly) {
+				outputStream = new DataOutputStream(new BufferedOutputStream(
+						context.openFileOutput(filename, Context.MODE_APPEND)));
 
-			//Assuming we got here, start writing to the stream, from the beginning, if
-			//necessary, or just append if possible
-			for (int i = (needToAppendOnly ? indexLastWrittenDay : 1);
-			     i < days.size(); ++i) {
-				days.get(i).writeDayToFile((DataOutputStream) outputStream);
+				for (int i = 0; i < indexDaysNeedToBeWritten.size(); ++i) {
+					days.get(indexDaysNeedToBeWritten.get(i))
+							.writeDayToFile((DataOutputStream) outputStream);
+				}
+			} else {
+				outputStream = new DataOutputStream(new BufferedOutputStream(
+						context.openFileOutput(filename, Context.MODE_PRIVATE)));
+
+				for (int i = 0; i < days.size(); ++i) {
+					days.get(indexDaysNeedToBeWritten.get(i))
+							.writeDayToFile((DataOutputStream) outputStream);
+				}
 			}
 		} catch (IOException e) {
 			Log.d("TimeCard", "Data could not be written to file");
 		} finally {
 			if(outputStream != null) {
+				indexDaysNeedToBeWritten.clear();
 				outputStream.flush();
 				outputStream.close();
 			}
@@ -245,14 +287,18 @@ class TimeCard {
 	}
 
 	private ArrayList<Day> days;
+	private ArrayList<Integer> indexDaysNeedToBeWritten;
+
 	private ViewGroup scrollingTableView;
 	private LayoutInflater layoutInflater;
-	private final String filename = "Time Punch History";
 	private InputStream inputStream;
 	private OutputStream outputStream;
+
+	private final String filename = "Time Punch History4";
 	private boolean needToAppendOnly = true;
 	private int indexLastWrittenDay = 0;
 	private int indexOfMostRecentDay = 0;
+	private int MIN_PUNCH_WAIT = 6000;
 }
 
 
