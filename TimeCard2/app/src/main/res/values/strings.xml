@@ -95,4 +95,5 @@
     <string name="date">Date</string>
     <string name="punch_in">Punch In</string>
     <string name="punch_out">Punch Out</string>
+    <string name="export_to_csv">Export to CSV</string>
 </resources>

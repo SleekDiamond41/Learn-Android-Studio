@@ -225,7 +225,7 @@ class Day {
 	 * parameter. If field calls for a value that does not exist, the returned
 	 * String is empty.
 	 */
-	private String getStringField(int field) {
+	String getStringField(int field) {
 		try {
 			if (punches[field] == null) {
 				return "";
@@ -234,9 +234,9 @@ class Day {
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
 			if(punches[IN] != null) {
-				return String.format(Locale.US, "%1$tm/%1$te/%1$ty", punches[IN]);
+				return String.format(Locale.US, "%1$tm-%1$te-%1$ty", punches[IN]);
 			} else {
-				return String.format(Locale.US, "%1$tm/%1$te/%1$ty", punches[OUT]);
+				return String.format(Locale.US, "%1$tm-%1$te-%1$ty", punches[OUT]);
 			}
 		}
 	}
@@ -256,9 +256,20 @@ class Day {
 		}
 	}
 
+	Calendar safeGetCal() {
+		return (punches[IN] != null) ? punches[IN] : punches[OUT];
+	}
 
 	Calendar get(int field) throws NullPointerException {
 		return punches[field];
+	}
+
+	int getDayOfMonth() {
+		try {
+			return punches[IN].get(Calendar.DAY_OF_MONTH);
+		} catch (NullPointerException e) {
+			return punches[OUT].get(Calendar.DAY_OF_MONTH);
+		}
 	}
 
 

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.michael.timecard.MainActivity">
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:id="@+id/coordinator_layout"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="true"
+                                                 tools:context="com.example.michael.timecard.MainActivity">
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/scrollable_table_layout"
+        layout="@layout/content_main"/>
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -29,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
             <Button
                 android:id="@+id/buttonPunchOut"
@@ -38,7 +41,7 @@
                 android:layout_gravity="bottom|end"
                 android:text="@string/out"
                 app:layout_anchor="@+id/app_bar"
-                app:layout_anchorGravity="bottom|end" />
+                app:layout_anchorGravity="bottom|end"/>
 
             <Button
                 android:id="@+id/buttonPunchIn"
@@ -47,7 +50,7 @@
                 android:layout_gravity="bottom|center_horizontal"
                 android:text="@string/in"
                 app:layout_anchor="@+id/app_bar"
-                app:layout_anchorGravity="bottom|right" />
+                app:layout_anchorGravity="bottom|right"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 

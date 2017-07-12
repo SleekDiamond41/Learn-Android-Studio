@@ -1,6 +1,8 @@
 package com.example.michael.timecard;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +14,9 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -25,15 +29,23 @@ import java.util.Locale;
  */
 
 class TimeCard {
-	TimeCard(Context context, ViewGroup parentScrollView,
-	         Button buttonIn, Button buttonOut) throws RuntimeException {
+	TimeCard(Context context, ViewGroup parentScrollView) throws RuntimeException {
 		try {
+			File deleteFile = new File(filename);
+
+//			boolean deleted =
+					deleteFile.deleteOnExit();
+
+
+
+
+
 			//initialize variables
 			days = new ArrayList<>(0);
 			indexDaysNeedToBeWritten = new ArrayList<>(0);
 
 			layoutInflater = LayoutInflater.from(context);
-			scrollingTableView = parentScrollView;
+			scrollingTableView = parentScrollView.findViewById(R.id.scrollableTable);
 		} catch (Exception e) {
 			throw new RuntimeException();
 		}
@@ -58,8 +70,39 @@ class TimeCard {
 			}
 		}
 
-		setButton(buttonIn, Day.IN);
-		setButton(buttonOut, Day.OUT);
+		setButton((Button) parentScrollView.findViewById(R.id.buttonPunchIn), Day.IN);
+		setButton((Button) parentScrollView.findViewById(R.id.buttonPunchOut), Day.OUT);
+	}
+
+
+	void emailExportedCSVFile(Context context) {
+
+		try {
+			exportDataToCSVFormat(context);
+
+			Intent emailIntent = new Intent(Intent.ACTION_SEND);
+			emailIntent.setType("vnd.android.cursor.dir/email");
+
+			//assign email recipient
+			emailIntent.putExtra(Intent.EXTRA_EMAIL,
+					"mikearring@gmail.com");
+
+			//assign subject line of email
+			emailIntent.putExtra(Intent.EXTRA_SUBJECT,
+					"Hours Worked " + exportableFileName.substring(
+							0, exportableFileName.indexOf(".")));
+
+			//attach CSV file
+			Uri uri = Uri.parse("file://" + exportableFile);
+			emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
+
+
+			//launch emailIntent
+			context.startActivity(Intent.createChooser(emailIntent,
+					"Send your email in: "));
+		} catch (Exception e) {
+			Log.d("TimeCard", "Error exporting CSV file");
+		}
 	}
 
 
@@ -246,12 +289,11 @@ class TimeCard {
 	 */
 
 
-
 	/**
 	 * Write data to a file with the default filename.
 	 *
 	 * @param context The Context of the program at the moment when this method is called.
-	 * @throws Exception Exception is thrown if data cannot be written for any
+	 * @throws IOException Thrown if data cannot be written for any
 	 * reason. This signifies that data, especially newly entered data,
 	 * may be lost if program is terminated.
 	 */
@@ -286,6 +328,129 @@ class TimeCard {
 		}
 	}
 
+
+	/**
+	 * Prepare a .csv file, which can then be exported.
+	 */
+	private void exportDataToCSVFormat(Context context) {
+		exportableFileName = "";
+
+		int lowerLimit = 11;
+		int upperLimit = 26;
+
+		Calendar c = Calendar.getInstance(Locale.US);
+
+		//set exportableFileName
+		int indexLastDayToBeWritten;
+		int indexFirstDay = 1;
+		if(lowerLimit <= days.get(indexFirstDay).getDayOfMonth()
+				&& days.get(indexFirstDay).getDayOfMonth() < upperLimit) {
+			c.set(days.get(indexFirstDay).safeGetCal().get(Calendar.YEAR),
+					((days.get(indexFirstDay).safeGetCal().get(Calendar.MONTH) + 1) % 12),
+					lowerLimit);
+
+			exportableFileName += days.get(indexFirstDay).getStringField(Day.DATE) + " - ";
+			indexLastDayToBeWritten = indexFirstDay;
+			while (c.before(days.get(++indexLastDayToBeWritten)));
+
+			exportableFileName += days.get(indexLastDayToBeWritten)
+					.getStringField(Day.DATE);
+		} else {
+			c.set(days.get(indexFirstDay).safeGetCal().get(Calendar.YEAR),
+					(days.get(indexFirstDay).safeGetCal().get(Calendar.MONTH) % 12),
+					upperLimit);
+			exportableFileName += days.get(indexFirstDay).getStringField(Day.DATE) + " - ";
+			indexLastDayToBeWritten = indexFirstDay;
+			while (c.before(days.get(++indexLastDayToBeWritten)));
+
+			exportableFileName += days.get(indexLastDayToBeWritten)
+					.getStringField(Day.DATE);
+		}
+
+
+		//open file stream to new document, to be exported
+		try {
+			exportableFileName += ".csv";
+
+			String filepath = context.getFilesDir().getPath() + "/" + exportableFileName;
+
+			outputStream = context.openFileOutput(exportableFileName, Context.MODE_PRIVATE);
+			exportableFile = new File(filepath);
+			FileWriter fileWriter = new FileWriter(exportableFile);
+
+
+			int differenceHours = 0;
+			int differenceMinutes = 0;
+			Long differenceTimeInMillis = 0L;
+			Long sumDaysDifferenceTimeInMillis;
+			String lineToBeWritten = "";
+
+
+
+			int i = indexFirstDay;
+//			for (int i = 0; i < indexLastDayToBeWritten; ++i) {
+				sumDaysDifferenceTimeInMillis = 0L;
+
+//				do {
+					lineToBeWritten += days.get(indexFirstDay).getStringField(Day.DATE) + ",";
+					lineToBeWritten += days.get(indexFirstDay).getStringField(Day.IN) + ",";
+					lineToBeWritten += days.get(indexFirstDay).getStringField(Day.OUT) + ",";
+
+					//find the total hours worked
+					try {
+						differenceTimeInMillis = days.get(indexFirstDay).get(Day.OUT).getTimeInMillis()
+								- days.get(indexFirstDay).get(Day.IN).getTimeInMillis();
+
+						sumDaysDifferenceTimeInMillis += differenceTimeInMillis;
+						differenceHours = (int) (differenceTimeInMillis / 3600000);
+						differenceMinutes = (int) (differenceTimeInMillis / 60000);
+
+						lineToBeWritten += differenceHours + "h " + differenceMinutes + "m";
+						if (differenceHours > 14 || differenceMinutes > 60) {
+							throw new IOException();
+						}
+					} catch (NullPointerException e) {
+						Log.d("TimeCard", "Error preparing CSV file export");
+					} catch (IOException e) {
+						Log.d("TimeCard", "There might be something wrong with the total number\n" +
+								"of hours worked.");
+//					}
+					++i;
+
+//					days.remove(0);
+//				} while (days.get(i).safeGetCal().equals(days.get(i+1).safeGetCal()));
+
+				differenceHours = (int) (sumDaysDifferenceTimeInMillis / 3600000);
+				differenceMinutes = (int) (sumDaysDifferenceTimeInMillis / 60000);
+				lineToBeWritten += "," + differenceHours + "h " + differenceMinutes + "m\n";
+
+				fileWriter.write(lineToBeWritten);
+
+//				days.remove(0);
+			}
+
+		} catch (IOException e) {
+			Log.d("TimeCard", "Exportable file could not be generated");
+		} catch (NullPointerException e) {
+			Log.d("TimeCard", "One of the items being written to CSV file" +
+					"\ncould not be written");
+		} finally {
+			try {
+				if(outputStream != null) {
+					outputStream.close();
+				}
+			} catch (IOException e) {
+				Log.d("TimeCard", "CVS OutputFileStream could not be closed");
+			}
+		}
+
+
+
+		//somehow wrap up new file, send out in some way (email?)
+				//use "Intent" object to open email?
+	}
+
+
 	private ArrayList<Day> days;
 	private ArrayList<Integer> indexDaysNeedToBeWritten;
 
@@ -294,7 +459,9 @@ class TimeCard {
 	private InputStream inputStream;
 	private OutputStream outputStream;
 
-	private final String filename = "Time Punch History4";
+	private final String filename = "Time Punch History1.0";
+	private String exportableFileName = "";
+	private File exportableFile;
 	private boolean needToAppendOnly = true;
 	private int indexLastWrittenDay = 0;
 	private int indexOfMostRecentDay = 0;

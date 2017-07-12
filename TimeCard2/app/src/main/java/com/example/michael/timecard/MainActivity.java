@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import java.io.IOException;
 
@@ -24,9 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             timeCard = new TimeCard(this,
-		            (ViewGroup) findViewById(R.id.scrollableTable),
-                    (Button) findViewById(R.id.buttonPunchIn),
-                    (Button) findViewById(R.id.buttonPunchOut));
+		            (ViewGroup) findViewById(R.id.coordinator_layout));
         } catch (RuntimeException e) {
             Log.d("TimeCard", "Error initializing TimeCard. Terminate program");
         }
@@ -72,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.export_to_csv) {
+	        timeCard.emailExportedCSVFile(getBaseContext());
+	        return true;
         }
         return super.onOptionsItemSelected(item);
     }
